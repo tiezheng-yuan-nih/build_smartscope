@@ -2,5 +2,6 @@ backups/*;!backups/.gitignore
 data/*;!data/.gitignore
 db/*;!db/.gitignore
 logs/*;!logs/.gitignore
-shared/*
+shared/nginx/*;!shared/nginx/.gitignore
+shared/smartscope/*;!shared/smartscope/.gitignore
 testfiles/*
