@@ -1,5 +1,5 @@
-!backup/;backups/*
-data/*
+backups/*
+!data/.gitignore
 db/*
 logs/*
 shared/nginx/*
