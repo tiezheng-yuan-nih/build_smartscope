@@ -1,0 +1,7 @@
+!backup/;backups/*
+data/*
+db/*
+logs/*
+shared/nginx/*
+shared/smartscope/*
+testfiles/*
