@@ -1,6 +1,6 @@
 backups/*
 data/*
-db/*
+!db/.gitignore
 logs/*
 shared/*
 testfiles/*
