@@ -1,0 +1,61 @@
+# DEV mode
+version: "3"
+services:
+  db:
+    image: mariadb:10.5
+    container_name: smartscope-db
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    env_file:
+      - database.conf
+    volumes:
+      - ./db/:/var/lib/mysql/
+      - ./backups/:/mnt/backups/
+    ports:
+      - "3306:3306"
+    networks:
+      - smartscopenet
+
+  cache:
+    image: redis:6.2-alpine
+    container_name: smartscope-redis
+    restart: always
+    command: redis-server --save 20 1 --loglevel warning
+    networks:
+      - smartscopenet
+
+  smartscope:
+    image: ghcr.io/niehs/smartscope:0.9.1-rc.4
+    container_name: smartscope
+    volumes:
+      - ./shared/nginx/:/opt/shared/:rw
+      - ./shared/smartscope/:/opt/config/:rw
+      - ./testfiles/:/mnt/testfiles/:rw
+      - ./logs/:/opt/logs/:rw
+      - ./backups/:/mnt/backups/:rw
+    env_file:
+      - database.conf
+      - smartscope.conf
+    depends_on:
+      - db
+      - cache
+    networks:
+      - smartscopenet
+  nginx:
+    image: nginx
+    container_name: nginx
+    restart: always
+    ports:
+      - "48000:80"
+    volumes:
+      - ./shared/nginx/:/opt/shared/:ro
+    depends_on:
+      - smartscope
+    command: /opt/shared/nginx-entrypoint.sh
+    networks:
+      - smartscopenet
+
+
+
+networks:
+  smartscopenet:
