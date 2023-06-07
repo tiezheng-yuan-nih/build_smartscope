@@ -1,6 +1,6 @@
 backups/*;!backups/.gitignore
 data/*;!data/.gitignore
 db/*;!db/.gitignore
-logs/*
+logs/*;!logs/.gitignore
 shared/*
 testfiles/*
