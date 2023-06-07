@@ -1,7 +1,0 @@
-{
-"pipeline": "smartscopePipeline",  
-"kwargs": {
-    "n_processes": 1, 
-    "frames_directory": null
-    }
-}
