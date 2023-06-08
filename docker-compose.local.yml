@@ -9,7 +9,7 @@ services:
     restart: always
     user: "${UID}:${GID}"
     env_file:
-      - database.conf
+      - database.local.conf
     volumes:
       - ./db/:/var/lib/mysql/
       - ./backups/:/mnt/backups/
@@ -38,7 +38,7 @@ services:
       - ./logs/:/opt/logs/:rw
       - ./backups/:/mnt/backups/:rw
     env_file:
-      - database.conf
+      - database.local.conf
       - smartscope.conf
     depends_on:
       - db

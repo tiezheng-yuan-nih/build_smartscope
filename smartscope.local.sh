@@ -8,6 +8,7 @@ Subcommand              DESCRIPTION
 ==========              ===========
 start                   Start SmartScope
 stop                    Stop smartscope
+clear                   remove directories of db, logs, shared
 run \e[3mcommand\e[0m             Run a smartscope command in the smartscope container
 python                  Runs an interactive ipython shell inside the smartscope container
 "
@@ -31,10 +32,15 @@ export GID=1001
 case $argument in
     start)
         echo "Create and run ${app} containers as ${UID}:${GID}"
-        docker compose up -d;;
+        docker compose -f docker-compose.local.yml up -d;;
     stop)
         echo "Stop ${app} containers:"
-        docker compose down ;;
+        docker compose  -f docker-compose.local.yml down ;;
+    clear)
+        echo "Remove all remaining files when building containers:"
+        rm -fr db/*
+        rm -fr shared/nginx/*
+        rm -fr shared/smartscope/*;;
     run)
         cmd="docker exec smartscope smartscope.py ${@:2}"
         echo -e "Execute command inside the ${app} containers: \e[3m$cmd\e[0m"
