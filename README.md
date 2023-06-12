@@ -9,35 +9,30 @@ All steps are tested in Rocky Linux
  - the port 4800 shouldnot be used. That would be used by SmartScope
 
 
-## Steps
+## Launch SmartScope in local machine
 
-### Step 1: retrieve repos
+### Step 1: retrieve repos from the remote
 
 ```
 git clone git@github.com:tiezheng-yuan-nih/build_smartscope.git SmartScope
 cd SmartScope
 ```
 
-### build SmartScope container
+### Step 2: build and run SmartScope container locally
 For local machine
 ```
 make local-start
 ```
 
-For product server
-```
-make prod-start
-```
+### Step3: test SmartScope
+    open browser, and login Smartscope using the url: http://localhost:48000. In default, 
+the user name is admin and password is cryoemsmartscope.
 
-### stop SmartScope container
+### Step4: stop SmartScope container
 For local machine
 ```
 make local-stop
 ```
 
-For product server
-```
-make prod-stop
-```
 
 
