@@ -5,3 +5,4 @@ logs/*
 shared/nginx/*
 shared/smartscope/*
 testfiles/*
+smartscope_testfiles.tar.gz

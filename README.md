@@ -22,25 +22,23 @@ All steps are tested in Rocky Linux
 
 ## Launch SmartScope in local machine
 
-### Step 1: retrieve repos from the remote
+Retrieve repos from the remote
 
 ```
 git clone git@github.com:tiezheng-yuan-nih/build_smartscope.git SmartScope
 cd SmartScope
 ```
 
-### Step 2: build and run SmartScope container locally
-For local machine
+Build and start SmartScope container locally
 ```
-make local-start
+make local-build
 ```
 
-### Step3: test SmartScope
+Test SmartScope
     open browser, and login Smartscope using the url: http://localhost:48000. In default, 
 the user name is admin and password is "cryoemsmartscope".
 
-### Step4: stop SmartScope container
-For local machine
+Stop SmartScope container and delete sub-directories.
 ```
 make local-stop
 ```
