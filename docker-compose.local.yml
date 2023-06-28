@@ -14,7 +14,7 @@ services:
       - ./db/:/var/lib/mysql/
       - ./backups/:/mnt/backups/
     ports:
-      - "3306:3306"
+      - "3307:3306"
     networks:
       - smartscopenet
 
