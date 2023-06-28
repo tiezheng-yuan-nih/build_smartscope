@@ -1,4 +1,8 @@
 
+dev-build:
+	echo $$(./bin/download_data.sh)
+
+
 local-build:
 	@echo "Download local cryoEM data:"
 	mkdir testfiles

@@ -4,5 +4,7 @@ db/*
 logs/*
 shared/nginx/*
 shared/smartscope/*
+SmartScope/*
+external_plugins/*
 testfiles/*
 smartscope_testfiles.tar.gz
