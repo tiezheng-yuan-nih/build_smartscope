@@ -1,10 +1,13 @@
 backups/*
+config/*
 data/*
 db/*
+external_plugins/*
 logs/*
 shared/nginx/*
 shared/smartscope/*
 SmartScope/*
-external_plugins/*
+SmartScope-docs/*
+temp/*
 testfiles/*
 smartscope_testfiles.tar.gz

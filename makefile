@@ -1,7 +1,10 @@
 
-dev-build:
-	echo $$(./bin/download_data.sh)
-
+# dev-run:
+# 	cd SmartScope; \
+# 	source venv/bin/activate; \
+# 	export mode=dev; \
+# 	export PYTHONPATH=${PYTHONPATH}:${PWD}
+# 	python3 SmartScope/Smartscope/bin/manage.py runserver
 
 local-build:
 	@echo "Download local cryoEM data:"
